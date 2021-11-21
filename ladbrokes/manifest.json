@@ -1,0 +1,19 @@
+{  
+  "manifest_version": 2,  
+
+  "name": "Auto Betting Extension",  
+  "description": "This is auto betting extension for sports.",  
+  "version": "1.0",    
+  "permissions": ["notifications", "contextMenus", "downloads", "http://*/*", "https://*/*", "clipboardRead", "clipboardWrite", "storage"],
+
+  "browser_action": {  
+      "default_icon": "foot.png",
+      "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+		"matches": ["https://www.ladbrokes.com.au/sports/*"],
+		"js": ["content_scripts.js"],
+		"run_at": "document_start",
+		"all_frames": false
+	}]
+}
